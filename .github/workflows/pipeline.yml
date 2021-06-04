@@ -17,6 +17,7 @@ jobs:
   configure: 
     runs-on: ubuntu-latest
     steps: 
+      - uses: actions/checkout@v2
       - name: load env vars
         uses: falti/dotenv-action@v0.2.5
         with: 
