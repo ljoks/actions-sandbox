@@ -17,7 +17,22 @@ jobs:
   configure: 
     runs-on: ubuntu-latest
     steps: 
-      - name: load env vars
-#         uses: falti/dotenv-action@v0.2.5
+      - name: load env vars for prod
+        uses: falti/dotenv-action@v0.2.5
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: echo "Deploying to main"
+        with: 
+          path: ".production.env"
+      
+      - name: load env vars for qa
+        uses: falti/dotenv-action@v0.2.5
+        if: ${{ github.ref == 'refs/heads/qa' }}
+        with: 
+          path: ".qa.env"
+          
+      - name: load env vars for dev
+        uses: falti/dotenv-action@v0.2.5
+        if: ${{ github.ref == 'refs/heads/integration' }}
+        with: 
+          path: ".dev.env"
+      - name: echo
+        run: echo "$GITHUB_REF"
