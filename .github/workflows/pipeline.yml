@@ -17,7 +17,7 @@ jobs:
   configure: 
     runs-on: ubuntu-latest
     outputs: 
-      env: ${{ steps.prodenv.outputs.node_env }}
+      env: ${{ steps.prodenv.outputs }}
     steps: 
       - uses: actions/checkout@v2
       - name: load env vars for prod
