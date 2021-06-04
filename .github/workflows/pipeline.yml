@@ -15,9 +15,9 @@ on:
 jobs:
   # set env variables depending on environment
   configure: 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestod
     outputs: 
-      env: ${{ steps.prodenv.outputs }}
+      env: ${{ steps.prodenv.outputs.node_env }}
     steps: 
       - uses: actions/checkout@v2
       - name: load env vars for prod
