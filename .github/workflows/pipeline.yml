@@ -15,7 +15,7 @@ on:
 jobs:
   # set env variables depending on environment
   configure: 
-    runs-on: ubuntu-latestod
+    runs-on: ubuntu-latest
     outputs: 
       env: ${{ steps.prodenv.outputs.node_env }}
     steps: 
