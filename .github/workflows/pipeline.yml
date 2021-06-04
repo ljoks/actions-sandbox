@@ -21,21 +21,21 @@ jobs:
         uses: falti/dotenv-action@v0.2.5
         if: ${{ github.ref == 'refs/heads/main' }}
         with: 
-          path: "./.production.env"
+          path: .production.env
           log-variables: true
       
       - name: load env vars for qa
         uses: falti/dotenv-action@v0.2.5
         if: ${{ github.ref == 'refs/heads/qa' }}
         with: 
-          path: "./.qa.env"
+          path: .qa.env
           log-variables: true
           
       - name: load env vars for dev
         uses: falti/dotenv-action@v0.2.5
         if: ${{ github.ref == 'refs/heads/integration' }}
         with: 
-          path: "./.dev.env"
+          path: .dev.env
           log-variables: true
       - name: echo
         run: echo "$GITHUB_REF"
