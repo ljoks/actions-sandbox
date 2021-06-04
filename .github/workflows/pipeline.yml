@@ -20,7 +20,7 @@ jobs:
       - name: load env vars
         uses: falti/dotenv-action@v0.2.5
         with: 
-          path: ./.env
+          path: ../../../.env
           log-variables: true
       - name: load env vars for prod
         uses: falti/dotenv-action@v0.2.5
