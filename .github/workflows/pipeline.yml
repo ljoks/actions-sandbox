@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: run ls
-        run: ls
+        run: echo $(ls)
       - name: load env vars for prod
         uses: falti/dotenv-action@v0.2.5
         if: ${{ github.ref == 'refs/heads/main' }}
